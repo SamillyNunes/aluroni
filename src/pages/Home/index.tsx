@@ -1,6 +1,7 @@
 import menu from 'data/menu.json';
 import styles from './Home.module.scss';
 import themeStyles from 'styles/Theme.module.scss';
+import ourHomePhoto from 'assets/images/nossa_casa.png';
 
 export default function Home() {
     let recommeded = [...menu];
@@ -19,6 +20,14 @@ export default function Home() {
                         <button className={styles.recommendedButton}>Ver mais</button>
                     </div>
                 ))}
+            </div>
+            <h3 className={themeStyles.title}>Nossa casa</h3>
+            <div className={styles.ourHome}>
+                <img src={ourHomePhoto} alt='Casa do Aluroni' />
+                <div className={styles.ourHomeAddress}>
+                    Rua das Pedras 569 <br/><br/> Igaci - AL
+                </div>
+
             </div>
         </section>
     );
