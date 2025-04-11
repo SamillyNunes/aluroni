@@ -1,5 +1,6 @@
 import { Outlet } from 'react-router-dom';
 import styles from './Layout.module.scss';
+import themeStyles from 'styles/Theme.module.scss';
 
 export default function Layout() {
     return (
@@ -9,7 +10,7 @@ export default function Layout() {
                     A casa do código e da massa
                 </div>
             </header>
-            <div>
+            <div className={themeStyles.container}>
                 <Outlet />
             </div>
         </>
