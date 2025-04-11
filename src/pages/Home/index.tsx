@@ -1,5 +1,6 @@
 import menu from 'data/menu.json';
 import styles from './Home.module.scss';
+import NavMenu from 'components/NavMenu';
 
 export default function Home() {
     let recommeded = [...menu];
@@ -8,6 +9,7 @@ export default function Home() {
 
     return (
         <section>
+            <NavMenu/>
             <h3 className={styles.title}>Recomendações da cozinha</h3>
             <div className={styles.recommendedList}>
                 {recommeded.map(item => (
