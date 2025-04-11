@@ -4,6 +4,7 @@ import NavMenu from 'components/NavMenu';
 import About from 'pages/About';
 import Cardapio from 'pages/Cardapio';
 import Home from 'pages/Home';
+import NotFound from 'pages/NotFound';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 export default function AppRouter() {
@@ -17,8 +18,8 @@ export default function AppRouter() {
                         <Route index element={<Home/>} />
                         <Route path='menu' element={<Cardapio />} />
                         <Route path='about' element={<About />} />
-
                     </Route>
+                    <Route path='*' element={<NotFound />} />
                 </Routes>
                 <Footer/>
             </BrowserRouter>
