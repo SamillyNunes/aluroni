@@ -1,4 +1,4 @@
-import Banner from 'components/Banner';
+import Layout from 'components/Layout';
 import NavMenu from 'components/NavMenu';
 import Cardapio from 'pages/Cardapio';
 import Home from 'pages/Home';
@@ -11,7 +11,7 @@ export default function AppRouter() {
                 <NavMenu />
 
                 <Routes>
-                    <Route path='/' element={<Banner />}>
+                    <Route path='/' element={<Layout />}>
                         <Route index element={<Home/>} />
                         <Route path='menu' element={<Cardapio />} />
 

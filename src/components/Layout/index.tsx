@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom';
-import styles from './Banner.module.scss';
+import styles from './Layout.module.scss';
 
-export default function Banner() {
+export default function Layout() {
     return (
         <>
             <header className={styles.header}>
