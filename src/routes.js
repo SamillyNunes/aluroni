@@ -1,3 +1,4 @@
+import Footer from 'components/Footer';
 import Layout from 'components/Layout';
 import NavMenu from 'components/NavMenu';
 import About from 'pages/About';
@@ -19,6 +20,7 @@ export default function AppRouter() {
 
                     </Route>
                 </Routes>
+                <Footer/>
             </BrowserRouter>
         </main>
     );
