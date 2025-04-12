@@ -2,11 +2,18 @@ import menu from 'data/menu.json';
 import styles from './Home.module.scss';
 import themeStyles from 'styles/Theme.module.scss';
 import ourHomePhoto from 'assets/images/nossa_casa.png';
+import { useNavigate } from 'react-router-dom';
 
 export default function Home() {
     let recommeded = [...menu];
     //ordenando de maneira aleatoria:
     recommeded = recommeded.sort(() => 0.5 - Math.random()).splice(0, 3);
+
+    const navigate = useNavigate();
+
+    function redirectToDetails(dish: typeof recommeded[0]) {
+        navigate(`/dish/${dish.id}`, {state: {dish}});
+    }
 
     return (
         <section>
@@ -17,7 +24,12 @@ export default function Home() {
                         <div className={styles.recommendedImg}>
                             <img src={item.photo} alt={item.title} />
                         </div>
-                        <button className={styles.recommendedButton}>Ver mais</button>
+                        <button 
+                            onClick={() => redirectToDetails(item)} 
+                            className={styles.recommendedButton}
+                        >
+                            Ver mais
+                        </button>
                     </div>
                 ))}
             </div>
@@ -25,7 +37,7 @@ export default function Home() {
             <div className={styles.ourHome}>
                 <img src={ourHomePhoto} alt='Casa do Aluroni' />
                 <div className={styles.ourHomeAddress}>
-                    Rua das Pedras 569 <br/><br/> Igaci - AL
+                    Rua das Pedras 569 <br /><br /> Igaci - AL
                 </div>
 
             </div>

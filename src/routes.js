@@ -3,6 +3,7 @@ import Layout from 'components/Layout';
 import NavMenu from 'components/NavMenu';
 import About from 'pages/About';
 import Cardapio from 'pages/Cardapio';
+import Dish from 'pages/Dish';
 import Home from 'pages/Home';
 import NotFound from 'pages/NotFound';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
@@ -20,6 +21,7 @@ export default function AppRouter() {
                         <Route path='about' element={<About />} />
                     </Route>
                     <Route path='*' element={<NotFound />} />
+                    <Route path='dish/:id' element={<Dish />} />
                 </Routes>
                 <Footer/>
             </BrowserRouter>
