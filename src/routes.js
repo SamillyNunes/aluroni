@@ -19,9 +19,9 @@ export default function AppRouter() {
                         <Route index element={<Home/>} />
                         <Route path='menu' element={<Cardapio />} />
                         <Route path='about' element={<About />} />
+                        <Route path='dish/:id' element={<Dish />} />
                     </Route>
                     <Route path='*' element={<NotFound />} />
-                    <Route path='dish/:id' element={<Dish />} />
                 </Routes>
                 <Footer/>
             </BrowserRouter>

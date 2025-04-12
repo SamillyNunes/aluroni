@@ -1,7 +1,7 @@
-import { useLocation, useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import styles from './Dish.module.scss';
-import classNames from 'classnames';
 import menu from 'data/menu.json';
+import DishTags from 'components/DishTags';
 
 export default function Dish() {
     const { id } = useParams();
@@ -25,23 +25,7 @@ export default function Dish() {
                     <p className={styles.contentDescription}>
                         {dish.description}
                     </p>
-                    <div className={styles.tags}>
-                        <div className={classNames({
-                            [styles.tags__type]: true,
-                            [styles[`tags__type__${dish.category.label.toLowerCase()}`]]: true,
-                        })}>
-                            {dish.category.label}
-                        </div>
-                        <div className={styles.tagsPortion}>
-                            {dish.size}g
-                        </div>
-                        <div className={styles.tagsPeopleQty}>
-                            Serve {dish.serving} pessoa{dish.serving===1 ? '' : 's'}
-                        </div>
-                        <div className={styles.tagsValue}>
-                            R$ {dish.price.toFixed(2)}
-                        </div>
-                    </div>
+                    <DishTags {...dish} />
                 </div>
             </section>
         </>
