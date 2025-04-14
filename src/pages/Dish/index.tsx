@@ -3,6 +3,7 @@ import styles from './Dish.module.scss';
 import menu from 'data/menu.json';
 import DishTags from 'components/DishTags';
 import NotFound from 'pages/NotFound';
+import Layout from 'components/Layout';
 
 export default function Dish() {
     const { id } = useParams();
@@ -13,7 +14,7 @@ export default function Dish() {
     if(!dish) return <NotFound/>;
 
     return (
-        <>
+        <Layout>
             <button onClick={()=>navigate(-1)} className={styles.back}>{'< Voltar'}</button>
             <section className={styles.container}>
                 <h1 className={styles.title}>
@@ -29,6 +30,6 @@ export default function Dish() {
                     <DishTags {...dish} />
                 </div>
             </section>
-        </>
+        </Layout>
     );
 }

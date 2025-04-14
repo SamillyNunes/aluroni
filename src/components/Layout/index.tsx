@@ -2,7 +2,7 @@ import { Outlet } from 'react-router-dom';
 import styles from './Layout.module.scss';
 import themeStyles from 'styles/Theme.module.scss';
 
-export default function Layout() {
+export default function Layout({children}: {children?: React.ReactNode}) {
     return (
         <>
             <header className={styles.header}>
@@ -12,6 +12,7 @@ export default function Layout() {
             </header>
             <div className={themeStyles.container}>
                 <Outlet />
+                {children}
             </div>
         </>
     );
